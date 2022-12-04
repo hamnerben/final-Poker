@@ -1,20 +1,18 @@
 package com.usu.todosmvvm
 
 import androidx.databinding.ObservableArrayList
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.usu.todosmvvm.models.Todo
+import com.usu.todosmvvm.models.Pastry
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 var idCounter = 0
 
 class TodosViewModel: ViewModel() {
-    val todos = ObservableArrayList<Todo>()
+    val todos = ObservableArrayList<Pastry>()
     val errorMessage = MutableLiveData("")
     fun createTodo(todoInput: String) {
         errorMessage.value = ""
@@ -41,7 +39,7 @@ class TodosViewModel: ViewModel() {
             }
             }
         }
-        todos.add(Todo(idCounter++, todoInput, idCounter % 2 == 0))
+        todos.add(Pastry(idCounter++, todoInput, idCounter % 2 == 0))
 
 
 
