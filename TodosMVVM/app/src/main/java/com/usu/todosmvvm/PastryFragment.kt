@@ -5,21 +5,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.usu.todosmvvm.databinding.FragmentTodosBinding
+import com.usu.todosmvvm.databinding.FragmentPastryBinding
 
-class TodosFragment : Fragment() {
+
+class PastryFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
 
-        val binding = FragmentTodosBinding.inflate(inflater, container, false)
+        val binding = FragmentPastryBinding.inflate(inflater, container, false)
         val viewModel = TodosViewModel()
 
-        binding.todosList.adapter = TodosAdapter(viewModel.todos)
+        binding.todosList.adapter = PastryAdapter(viewModel.todos)
         binding.todosList.layoutManager = LinearLayoutManager(context)
         viewModel.errorMessage.observe(viewLifecycleOwner) {errorMessage ->
             binding.errorOutput.text = errorMessage

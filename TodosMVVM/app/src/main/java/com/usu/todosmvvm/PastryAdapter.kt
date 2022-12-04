@@ -6,20 +6,20 @@ import androidx.databinding.ObservableArrayList
 import androidx.databinding.ObservableList
 import androidx.recyclerview.widget.RecyclerView
 import com.usu.todosmvvm.databinding.TodoListItemBinding
-import com.usu.todosmvvm.models.Todo
+import com.usu.todosmvvm.models.Pastry
 
-class TodosAdapter(val todos: ObservableArrayList<Todo>): RecyclerView.Adapter<TodosAdapter.ViewHolder>() {
+class PastryAdapter(val todos: ObservableArrayList<Pastry>): RecyclerView.Adapter<PastryAdapter.ViewHolder>() {
     class ViewHolder(val binding: TodoListItemBinding): RecyclerView.ViewHolder(binding.root)
 
 
     init {
-        todos.addOnListChangedCallback(object : ObservableList.OnListChangedCallback<ObservableArrayList<Todo>>() {
-            override fun onChanged(sender: ObservableArrayList<Todo>?) {
+        todos.addOnListChangedCallback(object : ObservableList.OnListChangedCallback<ObservableArrayList<Pastry>>() {
+            override fun onChanged(sender: ObservableArrayList<Pastry>?) {
                 notifyDataSetChanged()
             }
 
             override fun onItemRangeChanged(
-                sender: ObservableArrayList<Todo>?,
+                sender: ObservableArrayList<Pastry>?,
                 positionStart: Int,
                 itemCount: Int
             ) {
@@ -27,7 +27,7 @@ class TodosAdapter(val todos: ObservableArrayList<Todo>): RecyclerView.Adapter<T
             }
 
             override fun onItemRangeInserted(
-                sender: ObservableArrayList<Todo>?,
+                sender: ObservableArrayList<Pastry>?,
                 positionStart: Int,
                 itemCount: Int
             ) {
@@ -35,7 +35,7 @@ class TodosAdapter(val todos: ObservableArrayList<Todo>): RecyclerView.Adapter<T
             }
 
             override fun onItemRangeMoved(
-                sender: ObservableArrayList<Todo>?,
+                sender: ObservableArrayList<Pastry>?,
                 fromPosition: Int,
                 toPosition: Int,
                 itemCount: Int
@@ -44,7 +44,7 @@ class TodosAdapter(val todos: ObservableArrayList<Todo>): RecyclerView.Adapter<T
             }
 
             override fun onItemRangeRemoved(
-                sender: ObservableArrayList<Todo>?,
+                sender: ObservableArrayList<Pastry>?,
                 positionStart: Int,
                 itemCount: Int
             ) {
