@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_todos.xml" value="0.490272373540856" />
+        <entry key="app/src/main/res/layout/fragment_upgrade.xml" value="0.20052083333333334" />
         <entry key="app/src/main/res/layout/todo_list_item.xml" value="0.5" />
       </map>
     </option>
