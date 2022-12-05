@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
+        android:backgroundTint="#AC261D"
         android:text="Upgrade Shop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -52,17 +53,26 @@
         android:id="@+id/clickerDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed-medium"
         android:text="Pastries "
         android:textColor="@android:color/holo_red_dark"
         android:textSize="60sp"
-        tools:layout_editor_absoluteX="88dp"
+        android:typeface="serif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="16dp" />
 
     <TextView
         android:id="@+id/pastryNumberDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:fontFamily="sans-serif-condensed-light"
         android:text="0"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="110dp" />
+        android:textColor="#F44336"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clickerDisplay" />
 </androidx.constraintlayout.widget.ConstraintLayout>

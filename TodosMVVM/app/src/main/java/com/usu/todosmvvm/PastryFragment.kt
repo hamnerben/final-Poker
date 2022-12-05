@@ -26,8 +26,7 @@ class PastryFragment : Fragment() {
             binding.pastryNumberDisplay.text = "$it"
         }
 
-        binding.todosList.adapter = PastryAdapter(viewModel.pastries)
-        binding.todosList.layoutManager = LinearLayoutManager(context)
+
         viewModel.errorMessage.observe(viewLifecycleOwner) {errorMessage ->
             binding.errorOutput.text = errorMessage
         }

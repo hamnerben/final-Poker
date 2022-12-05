@@ -13,6 +13,22 @@ class PastryViewModel: ViewModel() {
     val pastries = ObservableArrayList<Pastry>()
     val errorMessage = MutableLiveData("")
 
+    init{
+        loadPastries()
+
+    }
+
+    fun loadPastries(){
+        viewModelScope.launch {
+            //val loadedPastries = PastryRepository.getAllPastries()
+            //pastries.addAll(loadedPastries)
+
+        }
+    }
+
+
+
+
     suspend fun createPastry(){
         viewModelScope.launch{
             var pastry = Pastry(id = 1, pastries = 0, clickPower = 1, offLineProduction = 0, autoClicker = 0, clickUpgradeCost = 100, autoClickUpgradeCost = 500, offLineProductionUpgradeCost = 1000)
