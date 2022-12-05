@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 data class Pastry(
     @PrimaryKey val id: Int,
     @ColumnInfo var pastries: Int,
-    @ColumnInfo var clickMultiplier: Int,
+    @ColumnInfo var clickPower: Int,
     @ColumnInfo var offLineProduction: Int,
     @ColumnInfo var autoClicker: Int,
     @ColumnInfo var clickUpgradeCost: Int,
