@@ -17,6 +17,17 @@ class UpgradeFragment : Fragment() {
         val binding = FragmentUpgradeBinding.inflate(inflater, container, false)
         val viewModel = TodosViewModel()
 
+        binding.autoClickerUpgrade.setOnClickListener(){
+            //Todo: add the upgrade code
+        }
+        binding.clickStrengthUpgrade.setOnClickListener(){
+            //Todo: add the click strength code
+        }
+        binding.offlinePercentageUpgrade.setOnClickListener(){
+            //Todo: add percentage upgrade
+
+        }
+
 
         return binding.root
     }
