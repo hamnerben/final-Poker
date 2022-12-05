@@ -37,12 +37,14 @@
 
     <ImageButton
         android:id="@+id/pastryClicker"
-        android:layout_width="258dp"
-        android:layout_height="205dp"
-        android:layout_marginTop="220dp"
-        android:src="@android:drawable/star_big_on"
+        android:layout_width="296dp"
+        android:layout_height="259dp"
+        android:layout_marginTop="188dp"
+        android:background="@drawable/cake"
+
+        android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -60,7 +62,7 @@
         android:id="@+id/pastryNumberDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="pastry"
+        android:text="0"
         tools:layout_editor_absoluteX="176dp"
         tools:layout_editor_absoluteY="110dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
