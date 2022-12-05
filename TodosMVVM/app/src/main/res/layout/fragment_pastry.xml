@@ -60,7 +60,7 @@
         android:id="@+id/pastryNumberDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="pastry"
+        android:text="0"
         tools:layout_editor_absoluteX="176dp"
         tools:layout_editor_absoluteY="110dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,22 +18,36 @@ class PastryViewModel: ViewModel() {
     }
 
     fun upgradeclick(){
-        pastry.clickPower *= 2
-        pastry.autoClickUpgradeCost *= 3
+        if(pastry.pastries >= pastry.clickUpgradeCost) {
+            pastry.clickPower *= 2
+            pastry.autoClickUpgradeCost *= 3
+            pastry.pastries -= pastry.clickUpgradeCost
+        }
     }
 
     fun upgradeOfflineproduction(){
-        pastry.offLineProduction += 5
-        pastry.offLineProductionUpgradeCost *=3
+        if(pastry.pastries >= pastry.offLineProductionUpgradeCost) {
+            pastry.offLineProduction += 5
+            pastry.offLineProductionUpgradeCost *= 3
+            pastry.pastries -= pastry.offLineProductionUpgradeCost
+        }
+
     }
 
     fun upgradeAutoClicker(){
-        pastry.autoClicker += (pastry.autoClickUpgradeCost / 10000)
-        pastry.autoClickUpgradeCost += pastry.autoClickUpgradeCost/4
+        if(pastry.pastries >= pastry.autoClickUpgradeCost) {
+            pastry.autoClicker += (pastry.autoClickUpgradeCost / 10000)
+            pastry.autoClickUpgradeCost += pastry.autoClickUpgradeCost / 4
+            pastry.pastries -= pastry.autoClickUpgradeCost
+        }
     }
 
     fun getpastries(): Int {
         return pastry.pastries
+    }
+
+    fun getUpgradeClickCost(): Int{
+        return pastry.clickUpgradeCost
     }
 
 }

@@ -26,6 +26,7 @@ class PastryFragment : Fragment() {
             binding.pastryNumberDisplay.text = "$it"
         }
 
+
         binding.todosList.adapter = PastryAdapter(viewModel.todos)
         binding.todosList.layoutManager = LinearLayoutManager(context)
         viewModel.errorMessage.observe(viewLifecycleOwner) {errorMessage ->
@@ -38,6 +39,7 @@ class PastryFragment : Fragment() {
 
         binding.pastryClicker.setOnClickListener(){
             viewModel.click()
+            count.setValue(viewModel.getpastries())
             //Todo: add the increment to the button
         }
 
