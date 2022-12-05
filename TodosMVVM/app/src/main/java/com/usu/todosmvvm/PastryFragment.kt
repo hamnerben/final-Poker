@@ -31,7 +31,7 @@ class PastryFragment : Fragment() {
         viewModel.errorMessage.observe(viewLifecycleOwner) {errorMessage ->
             binding.errorOutput.text = errorMessage
         }
-        
+
         binding.goToUpgrade.setOnClickListener {
             findNavController().navigate(R.id.action_pastryFragment_to_upgradeFragment)
         }
