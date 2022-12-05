@@ -60,8 +60,8 @@ class PastryAdapter(val todos: ObservableArrayList<Pastry>): RecyclerView.Adapte
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val todo = todos[position]
-        holder.binding.checkBox.text = todo.description
-        holder.binding.checkBox.isChecked = todo.completed
+        //holder.binding.checkBox.text = todo.description
+       // holder.binding.checkBox.isChecked = todo.completed
         // do some stuff when the user checks a box
     }
 

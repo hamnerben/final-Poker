@@ -14,9 +14,26 @@ var idCounter = 0
 class TodosViewModel: ViewModel() {
     val todos = ObservableArrayList<Pastry>()
     val errorMessage = MutableLiveData("")
+    var pastry = Pastry( pastries = 0, clickMultiplier = 1, offLineProduction = 0, autoClicker = 0, clickUpgradeCost = 100, autoClickUpgradeCost = 500, offLineProductionUpgradeCost = 1000)
     fun click(){
-
+        pastry.pastries += 1 * pastry.clickMultiplier
     }
+
+    fun upgradeclick(){
+        pastry.clickMultiplier ++
+        pastry.autoClickUpgradeCost *= 3
+    }
+
+    fun upgradeOfflineproduction(){
+        pastry.offLineProduction += 5
+        pastry.offLineProductionUpgradeCost *=3
+    }
+
+    fun upgradeAutoClicker(){
+        pastry.autoClicker += (pastry.autoClickUpgradeCost / 10000)
+        pastry.autoClickUpgradeCost += pastry.autoClickUpgradeCost/4
+    }
+
     fun createTodo(todoInput: String) {
         errorMessage.value = ""
         if (todoInput.isEmpty()) {
@@ -42,7 +59,7 @@ class TodosViewModel: ViewModel() {
             }
             }
         }
-        todos.add(Pastry(idCounter++, todoInput, idCounter % 2 == 0, pastries = 0, clickMultiplier = 0, offLineProduction = 0))
+
 
 
 
