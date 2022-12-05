@@ -17,5 +17,9 @@
     <fragment
         android:id="@+id/upgradeFragment"
         android:name="com.usu.todosmvvm.UpgradeFragment"
-        android:label="UpgradeFragment" />
+        android:label="UpgradeFragment" >
+        <action
+            android:id="@+id/action_upgradeFragment_to_pastryFragment"
+            app:destination="@id/pastryFragment" />
+    </fragment>
 </navigation>

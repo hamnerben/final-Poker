@@ -5,6 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+
+
 import com.usu.todosmvvm.databinding.FragmentUpgradeBinding
 
 class UpgradeFragment : Fragment() {
@@ -26,6 +29,10 @@ class UpgradeFragment : Fragment() {
         binding.offlinePercentageUpgrade.setOnClickListener(){
             //Todo: add percentage upgrade
 
+        }
+
+        binding.goToPastryPage.setOnClickListener(){
+            findNavController().navigate(R.id.action_upgradeFragment_to_pastryFragment)
         }
 
 

@@ -34,4 +34,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/errorOutput" />
+
+    <ImageButton
+        android:id="@+id/pastryClicker"
+        android:layout_width="258dp"
+        android:layout_height="205dp"
+        android:layout_marginTop="220dp"
+        android:src="@android:drawable/star_big_on"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/clickerDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pastries "
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="60sp"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/pastryNumberDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="pastry"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="110dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

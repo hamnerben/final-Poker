@@ -28,6 +28,10 @@ class PastryFragment : Fragment() {
         binding.goToUpgrade.setOnClickListener {
             findNavController().navigate(R.id.action_pastryFragment_to_upgradeFragment)
         }
+
+        binding.pastryClicker.setOnClickListener(){
+            //Todo: add the increment to the button
+        }
         return binding.root
     }
 }
