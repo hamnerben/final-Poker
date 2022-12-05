@@ -20,10 +20,7 @@ class PastryViewModel: ViewModel() {
             pastries.add(pastry)
         }
     }
-
-
-
-
+    
     fun click(){
         pastries[0].pastries +=  pastries[0].clickPower
     }
@@ -61,6 +58,13 @@ class PastryViewModel: ViewModel() {
         return pastries[0].clickUpgradeCost
     }
 
-    
+    fun getUpgradeAutoClickCost():Int{
+        return pastries[0].autoClickUpgradeCost
+    }
+
+    fun getUpgradeOfflineProductionCost():Int{
+        return pastries[0].offLineProductionUpgradeCost
+    }
+
 
 }

@@ -17,17 +17,35 @@ class UpgradeFragment : Fragment() {
     ): View?{
         val binding = FragmentUpgradeBinding.inflate(inflater, container, false)
         val viewModel = PastryViewModel()
+        val autoClickerUpgrade = ObservableInt()
+
+        autoClickerUpgrade.observe {
+            binding.autoClickerUpgrade.text = "$it"
+        }
+
+        val clickStrengthUpgrade = ObservableInt()
+        clickStrengthUpgrade.observe {
+            binding.clickStrengthUpgradeCost.text = "$it"
+        }
+
+        val offlineProductionUpgrade = ObservableInt()
+        offlineProductionUpgrade.observe {
+            binding.offlineProductionUpgradeCost.text = "$it"
+        }
 
         binding.autoClickerUpgrade.setOnClickListener(){
             viewModel.upgradeAutoClicker()
+            autoClickerUpgrade.setValue(viewModel.getUpgradeAutoClickCost())
             //Todo: add the upgrade code
         }
         binding.clickStrengthUpgrade.setOnClickListener(){
             viewModel.upgradeclick()
+            clickStrengthUpgrade.setValue(viewModel.getUpgradeClickCost())
             //Todo: add the click strength code
         }
         binding.offlinePercentageUpgrade.setOnClickListener(){
             viewModel.upgradeOfflineproduction()
+            offlineProductionUpgrade.setValue(viewModel.getUpgradeOfflineProductionCost())
             //Todo: add percentage upgrade
 
         }

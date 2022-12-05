@@ -5,6 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/offlineProductionUpgradeCost"
+        android:layout_width="59dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="64dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/offlinePercentageUpgrade"
+        app:layout_constraintTop_toTopOf="@+id/clickStrengthUpgradeCost" />
+
+    <TextView
+        android:id="@+id/clickStrengthUpgradeCost"
+        android:layout_width="59dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="50dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/clickStrengthUpgrade"
+        app:layout_constraintTop_toBottomOf="@+id/AutoClickerUpgradeCost" />
+
     <Button
         android:id="@+id/autoClickerUpgrade"
         android:layout_width="wrap_content"
@@ -45,4 +65,15 @@
         android:text="Return To the Pastry"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/AutoClickerUpgradeCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toEndOf="@+id/autoClickerUpgrade"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
