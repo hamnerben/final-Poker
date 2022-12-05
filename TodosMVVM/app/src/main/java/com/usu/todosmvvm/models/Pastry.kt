@@ -15,5 +15,4 @@ data class Pastry(
     @ColumnInfo var autoClickUpgradeCost: Int,
     @ColumnInfo var offLineProductionUpgradeCost: Int,
 
-    val sugma: Int,
     )
