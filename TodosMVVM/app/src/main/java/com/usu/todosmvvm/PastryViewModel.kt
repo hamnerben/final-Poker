@@ -14,7 +14,7 @@ var idCounter = 0
 class PastryViewModel: ViewModel() {
     val todos = ObservableArrayList<Pastry>()
     val errorMessage = MutableLiveData("")
-    var pastry = Pastry( pastries = 0, clickMultiplier = 1, offLineProduction = 0, autoClicker = 0, clickUpgradeCost = 100, autoClickUpgradeCost = 500, offLineProductionUpgradeCost = 1000)
+    var pastry = Pastry( id = 1, pastries = 0, clickMultiplier = 1, offLineProduction = 0, autoClicker = 0, clickUpgradeCost = 100, autoClickUpgradeCost = 500, offLineProductionUpgradeCost = 1000)
     fun click(){
         pastry.pastries += 1 * pastry.clickMultiplier
     }
