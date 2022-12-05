@@ -27,8 +27,8 @@ class PastryFragment : Fragment() {
         }
 
 
-        binding.todosList.adapter = PastryAdapter(viewModel.pastries)
-        binding.todosList.layoutManager = LinearLayoutManager(context)
+        //binding.todosList.adapter = PastryAdapter(viewModel.pastries)
+        //binding.todosList.layoutManager = LinearLayoutManager(context)
         viewModel.errorMessage.observe(viewLifecycleOwner) {errorMessage ->
             binding.errorOutput.text = errorMessage
         }

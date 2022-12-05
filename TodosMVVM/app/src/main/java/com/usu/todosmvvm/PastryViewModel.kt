@@ -18,10 +18,10 @@ class PastryViewModel: ViewModel() {
 
     }
 
-    fun loadPastries{
+    fun loadPastries(){
         viewModelScope.launch {
-            val loadedPastries = PastryRepository.getAllPastries()
-            pastries.addAll(loadedPastries)
+            //val loadedPastries = PastryRepository.getAllPastries()
+            //pastries.addAll(loadedPastries)
 
         }
     }
