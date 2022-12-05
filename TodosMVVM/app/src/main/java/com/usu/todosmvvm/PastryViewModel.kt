@@ -3,23 +3,34 @@ package com.usu.todosmvvm
 import androidx.databinding.ObservableArrayList
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.usu.todosmvvm.models.Pastry
+import kotlinx.coroutines.launch
 
 var idCounter = 0
 
 class PastryViewModel: ViewModel() {
-    val todos = ObservableArrayList<Pastry>()
+    val pastries = ObservableArrayList<Pastry>()
     val errorMessage = MutableLiveData("")
 
-    var pastry = Pastry(id = 1, pastries = 0, clickPower = 1, offLineProduction = 0, autoClicker = 0, clickUpgradeCost = 100, autoClickUpgradeCost = 500, offLineProductionUpgradeCost = 1000)
+    suspend fun createPastry(){
+        viewModelScope.launch{
+            var pastry = Pastry(id = 1, pastries = 0, clickPower = 1, offLineProduction = 0, autoClicker = 0, clickUpgradeCost = 100, autoClickUpgradeCost = 500, offLineProductionUpgradeCost = 1000)
+            PastryRepository.createPastry(pastry)
+            pastries.add(pastry)
+        }
+    }
+
+
+
 
     fun click(){
-        pastry.pastries +=  pastry.clickPower
+        pastries[0].pastries +=  pastries[0].clickPower
     }
 
     fun upgradeclick(){
-        pastry.clickPower *= 2
-        pastry.autoClickUpgradeCost *= 3
+        pastries[0].clickPower *= 2
+        pastries[0].autoClickUpgradeCost *= 3
     }
 
     fun upgradeOfflineproduction(){

@@ -1,12 +1,23 @@
 package com.usu.todosmvvm
 
 import androidx.room.Room
+import com.usu.todosmvvm.models.Pastry
 
 object PastryRepository {
+    private val db: AddDatabase
     init{
-        Room.databaseBuilder(
+        db = Room.databaseBuilder(
             PastryApplication.getInstance(),
             AddDatabase::class.java, "database"
         ).build()
     }
+
+    suspend fun createPastry(pastry: Pastry){
+
+    }
+
+    suspend fun updatePastryCount(pastry: Pastry){
+
+    }
+
 }
