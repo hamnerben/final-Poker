@@ -6,9 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-
-
 import com.usu.todosmvvm.databinding.FragmentUpgradeBinding
+
 
 class UpgradeFragment : Fragment() {
     override fun onCreateView(
@@ -20,13 +19,15 @@ class UpgradeFragment : Fragment() {
         val viewModel = PastryViewModel()
 
         binding.autoClickerUpgrade.setOnClickListener(){
-
+            viewModel.upgradeAutoClicker()
             //Todo: add the upgrade code
         }
         binding.clickStrengthUpgrade.setOnClickListener(){
+            viewModel.upgradeclick()
             //Todo: add the click strength code
         }
         binding.offlinePercentageUpgrade.setOnClickListener(){
+            viewModel.upgradeOfflineproduction()
             //Todo: add percentage upgrade
 
         }

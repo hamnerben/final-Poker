@@ -2,7 +2,7 @@ package com.usu.todosmvvm.models
 
 data class Pastry(
     var pastries: Int,
-    var clickMultiplier: Int,
+    var clickPower: Int,
     var offLineProduction: Int,
     var autoClicker: Int,
     var clickUpgradeCost: Int,
