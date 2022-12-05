@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.usu.todosmvvm.databinding.FragmentPastryBinding
+import com.usu.todosmvvm.ObservableInt
+import java.util.*
 
 
 class PastryFragment : Fragment() {
@@ -19,14 +21,17 @@ class PastryFragment : Fragment() {
 
         val binding = FragmentPastryBinding.inflate(inflater, container, false)
         val viewModel = PastryViewModel()
+        val count = ObservableInt()
+        count.observe {
+            binding.pastryNumberDisplay.text = "$it"
+        }
 
         binding.todosList.adapter = PastryAdapter(viewModel.todos)
         binding.todosList.layoutManager = LinearLayoutManager(context)
         viewModel.errorMessage.observe(viewLifecycleOwner) {errorMessage ->
             binding.errorOutput.text = errorMessage
         }
-
-        binding.pastryNumberDisplay.text = viewModel.getpastries().toString()
+        
         binding.goToUpgrade.setOnClickListener {
             findNavController().navigate(R.id.action_pastryFragment_to_upgradeFragment)
         }
