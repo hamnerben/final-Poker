@@ -14,6 +14,9 @@ var idCounter = 0
 class TodosViewModel: ViewModel() {
     val todos = ObservableArrayList<Pastry>()
     val errorMessage = MutableLiveData("")
+    fun click(){
+
+    }
     fun createTodo(todoInput: String) {
         errorMessage.value = ""
         if (todoInput.isEmpty()) {
@@ -39,7 +42,7 @@ class TodosViewModel: ViewModel() {
             }
             }
         }
-        todos.add(Pastry(idCounter++, todoInput, idCounter % 2 == 0))
+        todos.add(Pastry(idCounter++, todoInput, idCounter % 2 == 0, pastries = 0, clickMultiplier = 0, offLineProduction = 0))
 
 
 
