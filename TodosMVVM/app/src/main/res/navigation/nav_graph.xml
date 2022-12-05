@@ -9,5 +9,13 @@
         android:id="@+id/pastryFragment"
         android:name="com.usu.todosmvvm.PastryFragment"
         android:label="fragment_todos"
-        tools:layout="@layout/fragment_pastry" />
+        tools:layout="@layout/fragment_pastry" >
+        <action
+            android:id="@+id/action_pastryFragment_to_upgradeFragment"
+            app:destination="@id/upgradeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/upgradeFragment"
+        android:name="com.usu.todosmvvm.UpgradeFragment"
+        android:label="UpgradeFragment" />
 </navigation>
