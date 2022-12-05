@@ -34,4 +34,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/errorOutput" />
+
+    <ImageButton
+        android:id="@+id/pastryClicker"
+        android:layout_width="258dp"
+        android:layout_height="205dp"
+        android:layout_marginTop="220dp"
+        android:src="@android:drawable/star_big_on"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
