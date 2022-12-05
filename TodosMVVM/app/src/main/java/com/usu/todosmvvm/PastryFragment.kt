@@ -30,7 +30,7 @@ class PastryFragment : Fragment() {
         binding.goToUpgrade.setOnClickListener {
             findNavController().navigate(R.id.action_pastryFragment_to_upgradeFragment)
         }
-        
+
         binding.pastryClicker.setOnClickListener(){
             viewModel.click()
             //Todo: add the increment to the button
