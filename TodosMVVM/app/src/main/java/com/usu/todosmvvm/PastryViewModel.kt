@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 
 var idCounter = 0
 
-class TodosViewModel: ViewModel() {
+class PastryViewModel: ViewModel() {
     val todos = ObservableArrayList<Pastry>()
     val errorMessage = MutableLiveData("")
     var pastry = Pastry( pastries = 0, clickMultiplier = 1, offLineProduction = 0, autoClicker = 0, clickUpgradeCost = 100, autoClickUpgradeCost = 500, offLineProductionUpgradeCost = 1000)
@@ -34,34 +34,4 @@ class TodosViewModel: ViewModel() {
         pastry.autoClickUpgradeCost += pastry.autoClickUpgradeCost/4
     }
 
-    fun createTodo(todoInput: String) {
-        errorMessage.value = ""
-        if (todoInput.isEmpty()) {
-            errorMessage.value = "Todo input cannot be blank."
-            viewModelScope.launch {
-                //dealy(3000)
-                errorMessage.value =""
-            }
-            return
-        }
-        if(todoInput.trim().isEmpty()) {
-            errorMessage.value = "Todo input must contain at least one alpha numerica character"
-            return
-        }
-
-        // create todo
-        viewModelScope.launch{
-            val block = async(Dispatchers.IO) {
-            var i = 0;
-            while(i<100000){
-                i++
-                print(i)
-            }
-            }
-        }
-
-
-
-
-    }
 }

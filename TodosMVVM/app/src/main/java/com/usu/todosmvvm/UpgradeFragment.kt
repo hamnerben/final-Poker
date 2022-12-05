@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.usu.todosmvvm.databinding.FragmentPastryBinding
 import com.usu.todosmvvm.databinding.FragmentUpgradeBinding
 
 class UpgradeFragment : Fragment() {
@@ -15,9 +14,10 @@ class UpgradeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View?{
         val binding = FragmentUpgradeBinding.inflate(inflater, container, false)
-        val viewModel = TodosViewModel()
+        val viewModel = PastryViewModel()
 
         binding.autoClickerUpgrade.setOnClickListener(){
+
             //Todo: add the upgrade code
         }
         binding.clickStrengthUpgrade.setOnClickListener(){

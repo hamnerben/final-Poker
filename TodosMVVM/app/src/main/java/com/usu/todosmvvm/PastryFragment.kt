@@ -18,7 +18,7 @@ class PastryFragment : Fragment() {
     ): View {
 
         val binding = FragmentPastryBinding.inflate(inflater, container, false)
-        val viewModel = TodosViewModel()
+        val viewModel = PastryViewModel()
 
         binding.todosList.adapter = PastryAdapter(viewModel.todos)
         binding.todosList.layoutManager = LinearLayoutManager(context)
