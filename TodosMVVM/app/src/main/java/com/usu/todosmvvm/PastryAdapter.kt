@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.usu.todosmvvm.databinding.TodoListItemBinding
 import com.usu.todosmvvm.models.Pastry
 
-class PastryAdapter(val todos: ObservableArrayList<Pastry>): RecyclerView.Adapter<PastryAdapter.ViewHolder>() {
+class PastryAdapter(val todos: ObservableArrayList<Pastry>, val onPastryClicked: (Pastry) -> Unit): RecyclerView.Adapter<PastryAdapter.ViewHolder>() {
     class ViewHolder(val binding: TodoListItemBinding): RecyclerView.ViewHolder(binding.root)
 
 
