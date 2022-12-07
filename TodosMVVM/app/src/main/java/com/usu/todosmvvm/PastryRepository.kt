@@ -15,6 +15,10 @@ object PastryRepository {
     suspend fun createPastry(pastry: Pastry){
 
     }
+    suspend fun getAllPastries(): List<Pastry>{
+        //return PastryDao.getAllPastries()
+        return listOf()
+    }
 
     suspend fun updatePastryCount(pastry: Pastry){
 

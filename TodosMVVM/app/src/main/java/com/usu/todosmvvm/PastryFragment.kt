@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.usu.todosmvvm.databinding.FragmentPastryBinding
 import com.usu.todosmvvm.ObservableInt
+import com.usu.todosmvvm.models.Pastry
 import java.util.*
 
 
@@ -22,8 +23,10 @@ class PastryFragment : Fragment() {
         val binding = FragmentPastryBinding.inflate(inflater, container, false)
         val viewModel = PastryViewModel()
         val count = ObservableInt()
-        count.observe {
-            binding.pastryNumberDisplay.text = "$it"
+        viewModel.pastries.observe(viewLifecycleOwner) {
+            if(it!=null) {
+                binding.pastryNumberDisplay.text = "${it.pastries}"
+            }
         }
 
 

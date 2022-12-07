@@ -11,6 +11,9 @@ interface PastryDao {
     @Query("SELECT pastries FROM Pastry")
     suspend fun getPastryCount(): Int
 
+    @Query("SELECT * FROM Pastry")
+    suspend fun getAllPastries(): List<Pastry>
+
     @Insert
     suspend fun createPastry(pastry: Pastry)
 
