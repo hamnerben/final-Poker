@@ -43,6 +43,7 @@ class UpgradeFragment : Fragment() {
             }
             viewModel.update()
         }
+
         binding.clickStrengthUpgrade.setOnClickListener(){
             viewModel.upgradeclick()
             viewModel.pastries.observe(viewLifecycleOwner) {
@@ -68,6 +69,7 @@ class UpgradeFragment : Fragment() {
 
         binding.goToPastryPage.setOnClickListener(){
             findNavController().navigate(R.id.action_upgradeFragment_to_pastryFragment)
+            viewModel.update()
         }
 
 
