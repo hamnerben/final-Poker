@@ -19,6 +19,7 @@ class PastryFragment : Fragment() {
 
         val binding = FragmentPastryBinding.inflate(inflater, container, false)
         val viewModel = PastryViewModel()
+        viewModel.update()
         viewModel.pastries.observe(viewLifecycleOwner) {
             if(it!=null){}
             binding.pastryNumberDisplay.text = "${it.pastries}"
@@ -31,11 +32,12 @@ class PastryFragment : Fragment() {
 
         binding.goToUpgrade.setOnClickListener {
             findNavController().navigate(R.id.action_pastryFragment_to_upgradeFragment)
+            viewModel.update()
         }
 
         binding.pastryClicker.setOnClickListener(){
             viewModel.click()
-            viewModel.update()
+            //viewModel.update()
             viewModel.pastries.observe(viewLifecycleOwner) {
                 if(it!=null){}
                 binding.pastryNumberDisplay.text = "${it.pastries}"

@@ -18,6 +18,7 @@ class UpgradeFragment : Fragment() {
     ): View?{
         val binding = FragmentUpgradeBinding.inflate(inflater, container, false)
         val viewModel = PastryViewModel()
+        viewModel.update()
 
 
 
@@ -25,7 +26,6 @@ class UpgradeFragment : Fragment() {
             if(it!=null){
                 binding.clickStrengthUpgradeCost.text = "${it.clickUpgradeCost}"
                 binding.autoClickerUpgradeCost.text = "${it.autoClickUpgradeCost}"
-                binding.offlineProductionUpgradeCost.text = "${it.offLineProductionUpgradeCost}"
                 binding.pastryNumberDisplay2.text = "${it.pastries}"
 
             }
@@ -41,7 +41,6 @@ class UpgradeFragment : Fragment() {
                     binding.pastryNumberDisplay2.text = "${it.pastries}"
                 }
             }
-            viewModel.update()
         }
 
         binding.clickStrengthUpgrade.setOnClickListener(){
@@ -52,20 +51,9 @@ class UpgradeFragment : Fragment() {
                     binding.pastryNumberDisplay2.text = "${it.pastries}"
                 }
             }
-            viewModel.update()
         }
 
 
-        binding.offlinePercentageUpgrade.setOnClickListener(){
-            viewModel.upgradeOfflineproduction()
-            viewModel.pastries.observe(viewLifecycleOwner) {
-                if(it!=null){
-                    binding.offlineProductionUpgradeCost.text = "${it.offLineProductionUpgradeCost}"
-                    binding.pastryNumberDisplay2.text = "${it.pastries}"
-                }
-            }
-            viewModel.update()
-        }
 
         binding.goToPastryPage.setOnClickListener(){
             findNavController().navigate(R.id.action_upgradeFragment_to_pastryFragment)
