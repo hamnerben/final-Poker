@@ -108,8 +108,17 @@ class PastryViewModel: ViewModel() {
         }
     }
 
+    fun autoClick(){
+        if(pastries.value!=null) {
+        pastries.value = pastries.value!!.copy(pastries = pastries.value!!.pastries+ pastries.value!!.autoClicker)
+    }
+    }
+
     fun getpastries(): Int {
-        return pastries.value!!.pastries
+        if(pastries.value!=null) {
+            return pastries.value!!.pastries
+        }
+        return 0
     }
 
     fun getUpgradeClickCost(): Int{

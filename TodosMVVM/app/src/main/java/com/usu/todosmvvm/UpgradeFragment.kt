@@ -24,11 +24,12 @@ class UpgradeFragment : Fragment() {
         viewModel.pastries.observe(viewLifecycleOwner) {
             if(it!=null){
                 binding.clickStrengthUpgradeCost.text = "${it.clickUpgradeCost}"
-                binding.AutoClickerUpgradeCost.text = "${it.autoClickUpgradeCost}"
+                binding.autoClickerUpgradeCost.text = "${it.autoClickUpgradeCost}"
                 binding.offlineProductionUpgradeCost.text = "${it.offLineProductionUpgradeCost}"
                 binding.pastryNumberDisplay2.text = "${it.pastries}"
 
             }
+
         }
 
 
@@ -36,7 +37,7 @@ class UpgradeFragment : Fragment() {
             viewModel.upgradeAutoClicker()
             viewModel.pastries.observe(viewLifecycleOwner) {
                 if(it!=null){
-                    binding.AutoClickerUpgradeCost.text = "${it.autoClickUpgradeCost}"
+                    binding.autoClickerUpgradeCost.text = "${it.autoClickUpgradeCost}"
                     binding.pastryNumberDisplay2.text = "${it.pastries}"
                 }
             }

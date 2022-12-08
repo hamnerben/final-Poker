@@ -6,11 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.usu.todosmvvm.databinding.FragmentPastryBinding
-import com.usu.todosmvvm.ObservableInt
-import com.usu.todosmvvm.models.Pastry
-import java.util.*
+import android.os.CountDownTimer
 
 
 class PastryFragment : Fragment() {
@@ -22,7 +19,7 @@ class PastryFragment : Fragment() {
 
         val binding = FragmentPastryBinding.inflate(inflater, container, false)
         val viewModel = PastryViewModel()
-        val count = ObservableInt()
+        val pastryCount = ObservableInt()
         viewModel.pastries.observe(viewLifecycleOwner) {
             if(it!=null){}
             binding.pastryNumberDisplay.text = "${it.pastries}"
@@ -40,10 +37,32 @@ class PastryFragment : Fragment() {
         binding.pastryClicker.setOnClickListener(){
             viewModel.click()
             viewModel.update()
-            count.setValue(viewModel.getpastries())
+            pastryCount.setValue(viewModel.getpastries())
             //Todo: add the increment to the button
         }
 
+        val counter = object: CountUpTimer(100, 1){
+
+            override fun onCount(count: Int) {
+                viewModel.autoClick()
+                viewModel.update()
+                pastryCount.setValue(viewModel.getpastries())
+            }
+
+            override fun onFinish() {
+
+            }
+        }
+        counter.start()
         return binding.root
+    }
+
+    abstract class CountUpTimer(private val secondsInFuture: Int, countUpIntervalSeconds: Int) : CountDownTimer(secondsInFuture.toLong() * 1000, countUpIntervalSeconds.toLong() * 1000) {
+
+        abstract fun onCount(count: Int)
+
+        override fun onTick(msUntilFinished: Long) {
+            onCount(((secondsInFuture.toLong() * 1000 - msUntilFinished) / 1000).toInt())
+        }
     }
 }
