@@ -41,7 +41,7 @@
         android:layout_width="296dp"
         android:layout_height="259dp"
         android:layout_marginTop="188dp"
-        android:background="@drawable/cake"
+        android:background="@drawable/HiResCakePixel"
 
         android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
