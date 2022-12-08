@@ -14,5 +14,5 @@ data class Pastry(
     @ColumnInfo var clickUpgradeCost: Int,
     @ColumnInfo var autoClickUpgradeCost: Int,
     @ColumnInfo var offLineProductionUpgradeCost: Int,
-    @ColumnInfo var offlineTime: Int,
+    //@ColumnInfo var offlineTime: Int,
     )
