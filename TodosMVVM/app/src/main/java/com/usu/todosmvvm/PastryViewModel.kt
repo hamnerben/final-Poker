@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.usu.todosmvvm.models.Pastry
 import kotlinx.coroutines.launch
 
-var idCounter = 0
+
 
 class PastryViewModel: ViewModel() {
     val pastries = MutableLiveData<Pastry>()
@@ -51,8 +51,6 @@ class PastryViewModel: ViewModel() {
     suspend fun updatePastry(){
         viewModelScope.launch {
             pastries.value?.let { PastryRepository.updatePastryCount(pastry = it) }
-            //PastryDao.updatePastry(pastries
-
         }
     }
     
@@ -68,14 +66,19 @@ class PastryViewModel: ViewModel() {
         if(pastries.value!=null) {
             if (pastries.value!!.pastries >= pastries.value!!.clickUpgradeCost) {
                 pastries.value = pastries.value!!.copy(clickPower = pastries.value!!.clickPower + 2)
-                //pastries[0].clickPower *= 2
 
-                //pastries[0].autoClickUpgradeCost *= 3
                 pastries.value = pastries.value!!.copy(pastries = pastries.value!!.pastries - pastries.value!!.clickUpgradeCost)
                 //pastries[0].pastries -= pastries[0].clickUpgradeCost
                 pastries.value = pastries.value!!.copy(clickUpgradeCost = pastries.value!!.clickUpgradeCost * 2)
             }
         }
+    }
+
+    fun offlineClick(){
+        if(pastries.value!=null){
+
+        }
+
     }
 
     fun upgradeOfflineproduction(){
