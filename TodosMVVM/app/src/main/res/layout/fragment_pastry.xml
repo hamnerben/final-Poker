@@ -61,7 +61,7 @@
         android:layout_marginTop="14dp"
         android:fontFamily="sans-serif-condensed-light"
         android:text="0"
-        android:textColor="#F44336"
+        android:textColor="@color/red1"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
