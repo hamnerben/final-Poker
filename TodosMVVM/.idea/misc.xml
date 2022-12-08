@@ -3,13 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Ben/Desktop/GUIs 2410/Last Project/TodosMVVM/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Ben/Desktop/GUIs 2410/Last Project/TodosMVVM/app/src/main/res/layout/fragment_pastry.xml" value="0.1598731884057971" />
+        <entry key="..\:/Users/Ben/Desktop/GUIs 2410/Last Project/TodosMVVM/app/src/main/res/layout/fragment_upgrade.xml" value="0.5" />
         <entry key="..\:/Users/srmmc/CSHomework/GUIs/final-Poker/TodosMVVM/app/src/main/res/layout/fragment_pastry.xml" value="0.14130434782608695" />
         <entry key="..\:/Users/srmmc/CSHomework/GUIs/final-Poker/TodosMVVM/app/src/main/res/layout/fragment_upgrade.xml" value="0.14130434782608695" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_pastry.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_pastry.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_todos.xml" value="0.490272373540856" />
-        <entry key="app/src/main/res/layout/fragment_upgrade.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_upgrade.xml" value="0.1" />
         <entry key="app/src/main/res/layout/todo_list_item.xml" value="0.5" />
       </map>
     </option>

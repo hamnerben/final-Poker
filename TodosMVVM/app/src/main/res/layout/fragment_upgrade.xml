@@ -12,7 +12,7 @@
         android:layout_marginTop="14dp"
         android:fontFamily="sans-serif-condensed-light"
         android:text="0"
-        android:textColor="#F44336"
+        android:textColor="@color/red2"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,6 +37,7 @@
         android:id="@+id/offlineProductionUpgradeCost"
         android:layout_width="59dp"
         android:layout_height="20dp"
+        android:textColor="@color/red2"
 
 
         android:layout_marginTop="68dp"
@@ -50,6 +51,7 @@
         android:id="@+id/clickStrengthUpgradeCost"
         android:layout_width="59dp"
         android:layout_height="20dp"
+        android:textColor="@color/red2"
 
         android:layout_marginTop="48dp"
         android:text="TextView"
@@ -103,6 +105,7 @@
         android:id="@+id/autoClickerUpgradeCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/red2"
 
         android:layout_marginTop="264dp"
         android:text="TextView"
