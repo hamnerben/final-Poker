@@ -26,7 +26,6 @@ class UpgradeFragment : Fragment() {
             if(it!=null){
                 binding.clickStrengthUpgradeCost.text = "${it.clickUpgradeCost}"
                 binding.autoClickerUpgradeCost.text = "${it.autoClickUpgradeCost}"
-                binding.offlineProductionUpgradeCost.text = "${it.offLineProductionUpgradeCost}"
                 binding.pastryNumberDisplay2.text = "${it.pastries}"
 
             }
@@ -55,15 +54,6 @@ class UpgradeFragment : Fragment() {
         }
 
 
-        binding.offlinePercentageUpgrade.setOnClickListener(){
-            viewModel.upgradeOfflineproduction()
-            viewModel.pastries.observe(viewLifecycleOwner) {
-                if(it!=null){
-                    binding.offlineProductionUpgradeCost.text = "${it.offLineProductionUpgradeCost}"
-                    binding.pastryNumberDisplay2.text = "${it.pastries}"
-                }
-            }
-        }
 
         binding.goToPastryPage.setOnClickListener(){
             findNavController().navigate(R.id.action_upgradeFragment_to_pastryFragment)

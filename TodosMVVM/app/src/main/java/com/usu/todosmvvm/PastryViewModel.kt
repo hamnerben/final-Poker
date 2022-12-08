@@ -119,10 +119,9 @@ class PastryViewModel: ViewModel() {
                 pastries.value = pastries.value!!.copy(autoClickUpgradeCost = pastries.value!!.autoClickUpgradeCost + pastries.value!!.autoClickUpgradeCost /4 )
 
                 //pastries[0].autoClickUpgradeCost += pastries[0].autoClickUpgradeCost / 4
-
-
             }
         }
+        update()
     }
 
     fun autoClick(){
