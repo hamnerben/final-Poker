@@ -109,12 +109,14 @@ class PastryViewModel: ViewModel() {
     fun upgradeAutoClicker(){
         if(pastries.value!=null) {
             if (pastries.value!!.pastries >= pastries.value!!.autoClickUpgradeCost) {
-                pastries.value = pastries.value!!.copy(autoClicker = pastries.value!!.pastries + pastries.value!!.autoClickUpgradeCost/10000)
+                pastries.value = pastries.value!!.copy(autoClicker = pastries.value!!.autoClicker + pastries.value!!.autoClickUpgradeCost/10000 + 1)
                 //pastries[0].autoClicker += (pastries[0].autoClickUpgradeCost / 10000)
-                pastries.value = pastries.value!!.copy(autoClickUpgradeCost = pastries.value!!.autoClickUpgradeCost + pastries.value!!.autoClickUpgradeCost /4 )
-                //pastries[0].autoClickUpgradeCost += pastries[0].autoClickUpgradeCost / 4
                 pastries.value = pastries.value!!.copy(pastries = pastries.value!!.pastries - pastries.value!!.autoClickUpgradeCost)
                 //pastries[0].pastries -= pastries[0].autoClickUpgradeCost
+                pastries.value = pastries.value!!.copy(autoClickUpgradeCost = pastries.value!!.autoClickUpgradeCost + pastries.value!!.autoClickUpgradeCost /4 )
+                //pastries[0].autoClickUpgradeCost += pastries[0].autoClickUpgradeCost / 4
+
+
             }
         }
     }
