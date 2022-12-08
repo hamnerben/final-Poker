@@ -6,12 +6,41 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/pastryNumberDisplay2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="0"
+        android:textColor="#F44336"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pastryName" />
+
+    <TextView
+        android:id="@+id/pastryName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Pastries "
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="60sp"
+        android:typeface="serif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/offlineProductionUpgradeCost"
         android:layout_width="59dp"
         android:layout_height="20dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="68dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.625"
         app:layout_constraintStart_toEndOf="@+id/offlinePercentageUpgrade"
         app:layout_constraintTop_toTopOf="@+id/clickStrengthUpgradeCost" />
 
@@ -19,9 +48,10 @@
         android:id="@+id/clickStrengthUpgradeCost"
         android:layout_width="59dp"
         android:layout_height="20dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="48dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.888"
         app:layout_constraintStart_toEndOf="@+id/clickStrengthUpgrade"
         app:layout_constraintTop_toBottomOf="@+id/AutoClickerUpgradeCost" />
 
@@ -29,11 +59,11 @@
         android:id="@+id/autoClickerUpgrade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="100dp"
         android:text="Auto Clicker Upgrade"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/pastryNumberDisplay2" />
 
     <Button
         android:id="@+id/clickStrengthUpgrade"
@@ -70,10 +100,9 @@
         android:id="@+id/AutoClickerUpgradeCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="264dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toEndOf="@+id/autoClickerUpgrade"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
