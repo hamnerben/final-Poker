@@ -69,10 +69,11 @@ class PastryViewModel: ViewModel() {
             if (pastries.value!!.pastries >= pastries.value!!.clickUpgradeCost) {
                 pastries.value = pastries.value!!.copy(clickPower = pastries.value!!.clickPower + 2)
                 //pastries[0].clickPower *= 2
-                pastries.value = pastries.value!!.copy(autoClickUpgradeCost = pastries.value!!.autoClickUpgradeCost * 2)
+
                 //pastries[0].autoClickUpgradeCost *= 3
                 pastries.value = pastries.value!!.copy(pastries = pastries.value!!.pastries - pastries.value!!.clickUpgradeCost)
                 //pastries[0].pastries -= pastries[0].clickUpgradeCost
+                pastries.value = pastries.value!!.copy(clickUpgradeCost = pastries.value!!.clickUpgradeCost * 2)
             }
         }
     }

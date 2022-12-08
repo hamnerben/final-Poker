@@ -18,45 +18,52 @@ class UpgradeFragment : Fragment() {
     ): View?{
         val binding = FragmentUpgradeBinding.inflate(inflater, container, false)
         val viewModel = PastryViewModel()
-        val autoClickerUpgrade = ObservableInt()
 
-        autoClickerUpgrade.observe {
-            binding.autoClickerUpgradeCost.text = "$it"
+
+
+        viewModel.pastries.observe(viewLifecycleOwner) {
+            if(it!=null){
+                binding.clickStrengthUpgradeCost.text = "${it.clickUpgradeCost}"
+                binding.autoClickerUpgradeCost.text = "${it.autoClickUpgradeCost}"
+                binding.offlineProductionUpgradeCost.text = "${it.offLineProductionUpgradeCost}"
+                binding.pastryNumberDisplay2.text = "${it.pastries}"
+
+            }
+
         }
 
-        val clickStrengthUpgrade = ObservableInt()
-        clickStrengthUpgrade.observe {
-            binding.clickStrengthUpgradeCost.text = "$it"
-        }
-
-        val offlineProductionUpgrade = ObservableInt()
-        offlineProductionUpgrade.observe {
-            binding.offlineProductionUpgradeCost.text = "$it"
-        }
 
         binding.autoClickerUpgrade.setOnClickListener(){
             viewModel.upgradeAutoClicker()
-            autoClickerUpgrade.setValue(viewModel.getUpgradeAutoClickCost())
-            //Todo: add the upgrade code
-
+            viewModel.pastries.observe(viewLifecycleOwner) {
+                if(it!=null){
+                    binding.autoClickerUpgradeCost.text = "${it.autoClickUpgradeCost}"
+                    binding.pastryNumberDisplay2.text = "${it.pastries}"
+                }
+            }
+            viewModel.update()
         }
         binding.clickStrengthUpgrade.setOnClickListener(){
             viewModel.upgradeclick()
             viewModel.pastries.observe(viewLifecycleOwner) {
                 if(it!=null){
                     binding.clickStrengthUpgradeCost.text = "${it.clickUpgradeCost}"
+                    binding.pastryNumberDisplay2.text = "${it.pastries}"
                 }
-
             }
-            clickStrengthUpgrade.setValue(viewModel.getUpgradeClickCost())
             viewModel.update()
-            //Todo: add the click strength code
         }
+
+
         binding.offlinePercentageUpgrade.setOnClickListener(){
             viewModel.upgradeOfflineproduction()
-            offlineProductionUpgrade.setValue(viewModel.getUpgradeOfflineProductionCost())
-            //Todo: add percentage upgrade
-
+            viewModel.pastries.observe(viewLifecycleOwner) {
+                if(it!=null){
+                    binding.offlineProductionUpgradeCost.text = "${it.offLineProductionUpgradeCost}"
+                    binding.pastryNumberDisplay2.text = "${it.pastries}"
+                }
+            }
+            viewModel.update()
         }
 
         binding.goToPastryPage.setOnClickListener(){
