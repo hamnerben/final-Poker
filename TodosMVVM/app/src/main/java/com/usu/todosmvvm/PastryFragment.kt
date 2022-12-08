@@ -24,9 +24,8 @@ class PastryFragment : Fragment() {
         val viewModel = PastryViewModel()
         val count = ObservableInt()
         viewModel.pastries.observe(viewLifecycleOwner) {
-            if(it!=null) {
-                binding.pastryNumberDisplay.text = "${it.pastries}"
-            }
+            if(it!=null){}
+            binding.pastryNumberDisplay.text = "${it.pastries}"
         }
 
 
@@ -40,6 +39,7 @@ class PastryFragment : Fragment() {
 
         binding.pastryClicker.setOnClickListener(){
             viewModel.click()
+            viewModel.update()
             count.setValue(viewModel.getpastries())
             //Todo: add the increment to the button
         }

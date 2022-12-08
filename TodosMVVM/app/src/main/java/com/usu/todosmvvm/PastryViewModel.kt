@@ -15,7 +15,6 @@ class PastryViewModel: ViewModel() {
 
     init{
         loadPastries()
-
     }
 
     fun loadPastries(){
@@ -33,6 +32,11 @@ class PastryViewModel: ViewModel() {
 
         }
     }
+    fun update(){
+        viewModelScope.launch{
+            updatePastry()
+        }
+    }
 
 
 
@@ -44,10 +48,19 @@ class PastryViewModel: ViewModel() {
             pastries.value = pastry
         }
     }
+    suspend fun updatePastry(){
+        viewModelScope.launch {
+            pastries.value?.let { PastryRepository.updatePastryCount(pastry = it) }
+            //PastryDao.updatePastry(pastries
+
+        }
+    }
     
     fun click(){
         if(pastries.value!=null) {
             pastries.value = pastries.value!!.copy(pastries = pastries.value!!.clickPower + pastries.value!!.pastries) //look into later
+
+
         }
     }
 
