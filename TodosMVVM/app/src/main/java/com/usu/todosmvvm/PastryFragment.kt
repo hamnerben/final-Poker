@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.usu.todosmvvm.databinding.FragmentPastryBinding
-import android.os.CountDownTimer
+
 
 
 class PastryFragment : Fragment() {
@@ -42,31 +42,10 @@ class PastryFragment : Fragment() {
             }
         }
 
-        val counter = object: CountUpTimer(100, 1){
 
-            override fun onCount(count: Int) {
-                viewModel.autoClick()
-                viewModel.update()
-                viewModel.pastries.observe(viewLifecycleOwner) {
-                    if(it!=null){}
-                    binding.pastryNumberDisplay.text = "${it.pastries}"
-                }
-            }
 
-            override fun onFinish() {
-
-            }
-        }
-        counter.start()
         return binding.root
     }
 
-    abstract class CountUpTimer(private val secondsInFuture: Int, countUpIntervalSeconds: Int) : CountDownTimer(secondsInFuture.toLong() * 1000, countUpIntervalSeconds.toLong() * 1000) {
 
-        abstract fun onCount(count: Int)
-
-        override fun onTick(msUntilFinished: Long) {
-            onCount(((secondsInFuture.toLong() * 1000 - msUntilFinished) / 1000).toInt())
-        }
-    }
 }

@@ -6,17 +6,28 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.usu.todosmvvm.models.Pastry
 import kotlinx.coroutines.launch
-
+import android.os.CountDownTimer
 
 
 class PastryViewModel: ViewModel() {
     val pastries = MutableLiveData<Pastry>()
     val errorMessage = MutableLiveData("")
+    val counter = object : CountUpTimer(100, 1) {
+
+        override fun onCount(count: Int) {
+            autoClick()
+            update()
+        }
+
+        override fun onFinish() {
+        }
+    }
+
 
     init{
         loadPastries()
+        counter.start()
     }
-
     fun loadPastries(){
         viewModelScope.launch {
             val loadedPastries = PastryRepository.getAllPastries()
@@ -112,8 +123,17 @@ class PastryViewModel: ViewModel() {
         if(pastries.value!=null) {
             pastries.value = pastries.value!!.copy(pastries = pastries.value!!.pastries+ pastries.value!!.autoClicker)
         }
-    }
 
+
+    }
+    abstract class CountUpTimer(private val secondsInFuture: Int, countUpIntervalSeconds: Int) : CountDownTimer(secondsInFuture.toLong() * 1000, countUpIntervalSeconds.toLong() * 1000) {
+
+        abstract fun onCount(count: Int)
+
+        override fun onTick(msUntilFinished: Long) {
+            onCount(((secondsInFuture.toLong() * 1000 - msUntilFinished) / 1000).toInt())
+        }
+    }
 
     fun getUpgradeClickCost(): Int{
         return pastries.value!!.clickUpgradeCost
