@@ -20,7 +20,7 @@ class UpgradeFragment : Fragment() {
         val autoClickerUpgrade = ObservableInt()
 
         autoClickerUpgrade.observe {
-            binding.autoClickerUpgrade.text = "$it"
+            binding.autoClickerUpgradeCost.text = "$it"
         }
 
         val clickStrengthUpgrade = ObservableInt()

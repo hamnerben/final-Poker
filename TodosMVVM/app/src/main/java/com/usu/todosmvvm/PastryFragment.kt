@@ -44,6 +44,19 @@ class PastryFragment : Fragment() {
             //Todo: add the increment to the button
         }
 
+        val timer = Timer(){
+            @Override
+            fun run(){
+
+        }
+        }
+        val timerTask = TimerTask(){
+            @Override
+        }
+
+
+
         return binding.root
     }
+
 }
