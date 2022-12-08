@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.fragment.findNavController
 import com.usu.todosmvvm.databinding.FragmentUpgradeBinding
 
@@ -37,10 +38,18 @@ class UpgradeFragment : Fragment() {
             viewModel.upgradeAutoClicker()
             autoClickerUpgrade.setValue(viewModel.getUpgradeAutoClickCost())
             //Todo: add the upgrade code
+
         }
         binding.clickStrengthUpgrade.setOnClickListener(){
             viewModel.upgradeclick()
+            viewModel.pastries.observe(viewLifecycleOwner) {
+                if(it!=null){
+                    binding.clickStrengthUpgradeCost.text = "${it.clickUpgradeCost}"
+                }
+
+            }
             clickStrengthUpgrade.setValue(viewModel.getUpgradeClickCost())
+            viewModel.update()
             //Todo: add the click strength code
         }
         binding.offlinePercentageUpgrade.setOnClickListener(){
