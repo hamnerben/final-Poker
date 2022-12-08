@@ -16,7 +16,9 @@ class PastryViewModel: ViewModel() {
 
         override fun onCount(count: Int) {
             autoClick()
-            update()
+            viewModelScope.launch{
+                updatePastry()
+            }
         }
 
         override fun onFinish() {
