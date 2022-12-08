@@ -29,6 +29,7 @@ class PastryViewModel: ViewModel() {
     init{
         loadPastries()
         counter.start()
+
     }
     fun loadPastries(){
         viewModelScope.launch {
@@ -70,9 +71,8 @@ class PastryViewModel: ViewModel() {
     fun click(){
         if(pastries.value!=null) {
             pastries.value = pastries.value!!.copy(pastries = pastries.value!!.clickPower + pastries.value!!.pastries) //look into later
-
-
         }
+        update()
     }
 
     fun upgradeclick(){
@@ -85,6 +85,7 @@ class PastryViewModel: ViewModel() {
                 pastries.value = pastries.value!!.copy(clickUpgradeCost = pastries.value!!.clickUpgradeCost * 2)
             }
         }
+        update()
     }
 
     fun offlineClick(){
@@ -116,6 +117,7 @@ class PastryViewModel: ViewModel() {
                 pastries.value = pastries.value!!.copy(pastries = pastries.value!!.pastries - pastries.value!!.autoClickUpgradeCost)
                 //pastries[0].pastries -= pastries[0].autoClickUpgradeCost
                 pastries.value = pastries.value!!.copy(autoClickUpgradeCost = pastries.value!!.autoClickUpgradeCost + pastries.value!!.autoClickUpgradeCost /4 )
+
                 //pastries[0].autoClickUpgradeCost += pastries[0].autoClickUpgradeCost / 4
 
 
@@ -124,6 +126,7 @@ class PastryViewModel: ViewModel() {
     }
 
     fun autoClick(){
+
         if(pastries.value!=null) {
             pastries.value = pastries.value!!.copy(pastries = pastries.value!!.pastries+ pastries.value!!.autoClicker)
         }
