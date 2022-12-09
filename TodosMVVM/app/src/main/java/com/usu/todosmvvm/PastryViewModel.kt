@@ -12,7 +12,7 @@ import android.os.CountDownTimer
 class PastryViewModel: ViewModel() {
     val pastries = MutableLiveData<Pastry>()
     val errorMessage = MutableLiveData("")
-    val counter = object : CountUpTimer(100, 1) {
+    val counter = object : CountUpTimer(Int.MAX_VALUE, 1) {
 
         override fun onCount(count: Int) {
             autoClick()
