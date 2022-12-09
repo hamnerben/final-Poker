@@ -12,23 +12,14 @@ import android.os.CountDownTimer
 class PastryViewModel: ViewModel() {
     val pastries = MutableLiveData<Pastry>()
     val errorMessage = MutableLiveData("")
-    val counter = object : CountUpTimer(Int.MAX_VALUE, 1) {
 
-        override fun onCount(count: Int) {
-            autoClick()
-            viewModelScope.launch{
-                updatePastry()
-            }
-        }
 
-        override fun onFinish() {
-        }
-    }
+
 
 
     init{
         loadPastries()
-        counter.start()
+        //counter.start()
 
     }
     fun loadPastries(){
@@ -72,7 +63,7 @@ class PastryViewModel: ViewModel() {
         if(pastries.value!=null) {
             pastries.value = pastries.value!!.copy(pastries = pastries.value!!.clickPower + pastries.value!!.pastries) //look into later
         }
-        update()
+        //update()
     }
 
     fun upgradeclick(){
@@ -83,7 +74,7 @@ class PastryViewModel: ViewModel() {
                 pastries.value = pastries.value!!.copy(clickUpgradeCost = pastries.value!!.clickUpgradeCost * 2)
             }
         }
-        update()
+        //update()
     }
 
     fun offlineClick(){
@@ -112,22 +103,13 @@ class PastryViewModel: ViewModel() {
                 pastries.value = pastries.value!!.copy(autoClickUpgradeCost = pastries.value!!.autoClickUpgradeCost + pastries.value!!.autoClickUpgradeCost /4 )
             }
         }
-        update()
+        //update()
     }
 
     fun autoClick(){
         if(pastries.value!=null) {
             pastries.value = pastries.value!!.copy(pastries = pastries.value!!.pastries+ pastries.value!!.autoClicker)
         }
-
-
     }
-    abstract class CountUpTimer(private val secondsInFuture: Int, countUpIntervalSeconds: Int) : CountDownTimer(secondsInFuture.toLong() * 1000, countUpIntervalSeconds.toLong() * 1000) {
 
-        abstract fun onCount(count: Int)
-
-        override fun onTick(msUntilFinished: Long) {
-            onCount(((secondsInFuture.toLong() * 1000 - msUntilFinished) / 1000).toInt())
-        }
-    }
 }

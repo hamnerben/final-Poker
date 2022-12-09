@@ -18,7 +18,7 @@ class UpgradeFragment : Fragment() {
     ): View?{
         val binding = FragmentUpgradeBinding.inflate(inflater, container, false)
         val viewModel = PastryViewModel()
-        viewModel.update()
+        //viewModel.update()
 
 
 
@@ -27,6 +27,7 @@ class UpgradeFragment : Fragment() {
                 binding.clickStrengthUpgradeCost.text = "${it.clickUpgradeCost}"
                 binding.autoClickerUpgradeCost.text = "${it.autoClickUpgradeCost}"
                 binding.pastryNumberDisplay2.text = "${it.pastries}"
+                viewModel.update()
 
             }
 
@@ -42,6 +43,7 @@ class UpgradeFragment : Fragment() {
                     binding.pastryNumberDisplay2.text = "${it.pastries}"
                 }
             }
+            viewModel.update()
         }
 
         binding.clickStrengthUpgrade.setOnClickListener(){
@@ -52,6 +54,7 @@ class UpgradeFragment : Fragment() {
                     binding.pastryNumberDisplay2.text = "${it.pastries}"
                 }
             }
+            viewModel.update()
         }
 
 
