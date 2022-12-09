@@ -59,8 +59,6 @@ class UpgradeFragment : Fragment() {
             findNavController().navigate(R.id.action_upgradeFragment_to_pastryFragment)
             viewModel.update()
         }
-
-
         return binding.root
     }
 }

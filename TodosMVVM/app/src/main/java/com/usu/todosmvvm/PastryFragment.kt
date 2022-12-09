@@ -37,7 +37,6 @@ class PastryFragment : Fragment() {
 
         binding.pastryClicker.setOnClickListener(){
             viewModel.click()
-            //viewModel.update()
             viewModel.pastries.observe(viewLifecycleOwner) {
                 if(it!=null){}
                 binding.pastryNumberDisplay.text = "${it.pastries}"

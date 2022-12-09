@@ -17,7 +17,6 @@ object PastryRepository {
 
     }
     suspend fun getAllPastries(): List<Pastry>{
-        //return PastryDao.getAllPastries()
         return db.getPastryDao().getAllPastries()
     }
 
