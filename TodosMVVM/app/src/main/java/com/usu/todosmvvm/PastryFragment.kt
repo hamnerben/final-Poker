@@ -41,6 +41,7 @@ class PastryFragment : Fragment() {
                 if(it!=null){}
                 binding.pastryNumberDisplay.text = "${it.pastries}"
             }
+            viewModel.update()
         }
 
 
